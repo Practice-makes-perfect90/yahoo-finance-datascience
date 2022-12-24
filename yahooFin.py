@@ -1,17 +1,15 @@
 import yfinance as yf
-import plotly.graph_objs as go
-import matplotlib.pyplot as plt
+import plotly.graph_objs as got
 import datetime as dt
 import pandas as pd
 import requests
 import os
 from bs4 import BeautifulSoup
-
+import pdb; pdb.set_trace()
 ##### This is the stock ticker list for the program ######
 
 
-#table=pd.read_html('https://www.slickcharts.com/sp500')  #Webstite that shows SMP 500
-#table=pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+
 site = requests.get('https://www.slickcharts.com/sp500', headers={'User-agent': 'Mozilla/5.0'}).text
 page=pd.read_html(site)
 df=page[0]
@@ -66,10 +64,10 @@ exit = False
 
 while exit != True:
 
-    print("What do you want to do?")
-    print("1 for look at stock ticker, 2 for visualize stock ticker,3 for comparing stock ticker,4 to view as tuple")
+    print("What do you want to doi? ")
+    print("1 for look at stock ticker, 2 for visualize stock ticker,3 for comparing stock ticker,4 to view as tuple ")
 
-    choice = input("Enter your choice")
+    choice = input("Enter your choice ")
     choice = int(choice)
     stock = str("")
 
